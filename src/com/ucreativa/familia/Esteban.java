@@ -1,7 +1,7 @@
 package com.ucreativa.familia;
 
-public class Esteban {
-    public Esteban(){
-        System.out.println("Soy Esteban");
+public class Esteban extends Marina{
+    public Esteban(String saludo){
+        super(saludo);
     }
 }
