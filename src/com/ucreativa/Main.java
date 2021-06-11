@@ -1,16 +1,20 @@
 package com.ucreativa;
 import com.ucreativa.repositories.InMemoryRepository;
+import com.ucreativa.repositories.Repository;
+import com.ucreativa.repositories.FileRepository;
 import com.ucreativa.vacunacion.entities.BitacoraVacunas;
 import com.ucreativa.vacunacion.entities.Persona;
 import com.ucreativa.vacunacion.entities.Amigo;
 import com.ucreativa.vacunacion.entities.Familiar;
+
+import java.io.IOException;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main (String[] args){
+    public static void main (String[] args) throws IOException {
         List <BitacoraVacunas> BitacoraVacunas1 = new ArrayList<>();
         Persona persona1 = new Persona("Esteban", "1-1536-0687",28,true);
         Persona persona2 = new Persona("Marcela", "4-0293-1234",20,false);
@@ -22,7 +26,7 @@ public class Main {
         BitacoraVacunas1.add(bitacora3);
 
         Scanner in = new Scanner (System.in);
-        InMemoryRepository repo = new InMemoryRepository();
+        Repository repo = new FileRepository();
 
         while(true){
             String nombre, cedula, edad, riesgo, isAmigo, relacion, facebook, parentesco, marca, print;

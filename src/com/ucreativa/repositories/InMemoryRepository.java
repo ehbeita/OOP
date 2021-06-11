@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class InMemoryRepository {
+public class InMemoryRepository implements Repository{
 
-    private List<BitacoraVacunas> db;
+    private final List<BitacoraVacunas> db;
 
     public InMemoryRepository(){
         this.db = new ArrayList<>();
