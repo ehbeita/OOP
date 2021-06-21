@@ -1,4 +1,4 @@
-package com.ucreativa.ui;
+package com.ucreativa;
 
 import com.ucreativa.repositories.Repository;
 import com.ucreativa.repositories.FileRepository;

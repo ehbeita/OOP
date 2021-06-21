@@ -72,10 +72,9 @@ public class FrontEnd extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 BitacoraService service = new BitacoraService(new FileRepository());
                 try {
-                    service.save(txtNombre.getText(),txtCedula.getText(),txtEdad.getText(),
-                            txtRiesgo.isSelected(),txtIsAmigo.isSelected(),txtRelacion.getText(),
-                            txtFacebook.getText(),txtParentesco.getText(),txtMarca.getText());
-
+                    service.save(txtNombre.getText(), txtCedula.getText(), txtEdad.getText(),
+                            txtRiesgo.isSelected(), txtIsAmigo.isSelected(), txtRelacion.getText(),
+                            txtFacebook.getText(), txtParentesco.getText(), txtMarca.getText());
                     txtNombre.setText("");
                     txtCedula.setText("");
                     txtEdad.setText("");
@@ -86,11 +85,12 @@ public class FrontEnd extends JFrame{
                     txtParentesco.setText("");
                     txtMarca.setText("");
 
-                    //String reporte = String.join("\n",service.get());
-                    //JOptionPane.showMessageDialog(((JButton) e.getSource()).getParent(), reporte);
+                    String reporte = String.join("\n", service.get());
+                    JOptionPane.showMessageDialog(((JButton) e.getSource()).getParent(), reporte);
 
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
+                } catch (ErrorEnEdadException error) {
+                    error.printStackTrace();
+                    JOptionPane.showMessageDialog(((JButton) e.getSource()).getParent(), error.getMessage());
                 }
             }
         });
