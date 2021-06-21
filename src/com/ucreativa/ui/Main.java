@@ -1,4 +1,4 @@
-package com.ucreativa;
+package com.ucreativa.ui;
 
 import com.ucreativa.repositories.Repository;
 import com.ucreativa.repositories.FileRepository;
@@ -7,7 +7,7 @@ import com.ucreativa.vacunacion.entities.Persona;
 import com.ucreativa.vacunacion.entities.Amigo;
 import com.ucreativa.vacunacion.entities.Familiar;
 import com.ucreativa.services.BitacoraService;
-
+import com.ucreativa.ui.FrontEnd;
 import java.io.IOException;
 import java.util.Date;
 import java.util.ArrayList;
@@ -16,7 +16,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args) throws IOException {
-        List <BitacoraVacunas> BitacoraVacunas1 = new ArrayList<>();
+
+        FrontEnd fe = new FrontEnd("Sistema de Vacunacion");
+        fe.build();
+
+        /*List <BitacoraVacunas> BitacoraVacunas1 = new ArrayList<>();
         Persona persona1 = new Persona("Esteban", "1-1536-0687",28,true);
         Persona persona2 = new Persona("Marcela", "4-0293-1234",20,false);
         BitacoraVacunas bitacora1 = new BitacoraVacunas(persona1,"Marca1",new Date());
@@ -62,6 +66,6 @@ public class Main {
                     System.out.println(item);
                 }
             }
-        }
+        }*/
     }
 }
