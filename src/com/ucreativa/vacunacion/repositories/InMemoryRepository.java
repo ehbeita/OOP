@@ -1,12 +1,12 @@
-package com.ucreativa.repositories;
-import com.ucreativa.vacunacion.entities.BitacoraVacunas;
+package com.ucreativa.vacunacion.repositories;
+
 import com.ucreativa.vacunacion.entities.Persona;
+import com.ucreativa.vacunacion.entities.BitacoraVacunas;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 
 public class InMemoryRepository implements Repository{
 

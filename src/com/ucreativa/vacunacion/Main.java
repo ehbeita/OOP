@@ -1,18 +1,7 @@
-package com.ucreativa;
+package com.ucreativa.vacunacion;
+import com.ucreativa.vacunacion.ui.FrontEnd;
 
-import com.ucreativa.repositories.Repository;
-import com.ucreativa.repositories.FileRepository;
-import com.ucreativa.vacunacion.entities.BitacoraVacunas;
-import com.ucreativa.vacunacion.entities.Persona;
-import com.ucreativa.vacunacion.entities.Amigo;
-import com.ucreativa.vacunacion.entities.Familiar;
-import com.ucreativa.services.BitacoraService;
-import com.ucreativa.ui.FrontEnd;
 import java.io.IOException;
-import java.util.Date;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args) throws IOException {

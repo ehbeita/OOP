@@ -1,22 +1,21 @@
-package com.ucreativa.services;
+package com.ucreativa.vacunacion.services;
 
-import com.ucreativa.repositories.Repository;
-import com.ucreativa.ui.ErrorEnEdadException;
-import com.ucreativa.vacunacion.entities.Persona;
-import com.ucreativa.vacunacion.entities.Amigo;
-import com.ucreativa.vacunacion.entities.Familiar;
-import com.ucreativa.ui.ErrorEnEdadException;
+import com.ucreativa.vacunacion.entities.*;
 
-import java.io.IOException;
+import com.ucreativa.vacunacion.repositories.Repository;
+import com.ucreativa.vacunacion.ui.ErrorEnEdadException;
+
 import java.util.Date;
 import java.util.List;
 
 public class BitacoraService {
 
     private Repository repository;
+    private ContadorRiesgo contador;
 
     public BitacoraService(Repository repository){
         this.repository=repository;
+        this.contador = ContadorRiesgo.getInstance();
     }
 
     public void save(String nombre, String cedula, String txtEdad, boolean riesgo,
@@ -34,6 +33,10 @@ public class BitacoraService {
             }
         }
 
+        if (riesgo){
+            this.contador.SumarRiesgo();
+        }
+
         Persona persona;
         if (isAmigo){
             persona = new Amigo(nombre,cedula,edad,riesgo,relacion,facebook);
@@ -45,6 +48,9 @@ public class BitacoraService {
     }
 
     public List<String> get(){
+
+        System.out.println("La Cantidad de Personas con Riesgo es: "
+                + this.contador.getCantidadRiesgo());
         return this.repository.get();
     }
 }

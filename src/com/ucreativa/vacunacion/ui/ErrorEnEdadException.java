@@ -1,4 +1,4 @@
-package com.ucreativa.ui;
+package com.ucreativa.vacunacion.ui;
 
 public class ErrorEnEdadException extends Exception{
 

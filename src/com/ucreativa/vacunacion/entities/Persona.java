@@ -1,42 +1,46 @@
 package com.ucreativa.vacunacion.entities;
 
+import com.ucreativa.vacunacion.services.ContadorRiesgo;
+
 public class Persona {
 
-    public String nombre;
-    public String cedula;
+    private String nombre;
+    private String cedula;
     private int edad;
     private Boolean riesgo;
 
-    public Persona(String nombre, String cedula, int edad, Boolean riesgo){
-        this.nombre=nombre;
-        this.cedula=cedula;
-        this.edad=edad;
-        this.riesgo=riesgo;
+    public Persona(String nombre, String cedula, int edad, Boolean riesgo) {
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.edad = edad;
+        this.riesgo = riesgo;
+        if (riesgo) {
+            ContadorRiesgo.getInstance().SumarRiesgo();
+        }
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return this.nombre;
     }
 
-    public String getCedula(){
+    public String getCedula() {
         return this.cedula;
     }
 
-    public int getEdad(){
+    public int getEdad() {
         return this.edad;
     }
 
-    public void setEdad(int edad){
-        this.edad=edad;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
-    public Boolean getRiesgo(){
+    public Boolean getRiesgo() {
         return this.riesgo;
     }
 
-    public void setRiesgo(Boolean riesgo){
-        this.riesgo=riesgo;
+    public void setRiesgo(Boolean riesgo) {
+        this.riesgo = riesgo;
     }
-
 
 }

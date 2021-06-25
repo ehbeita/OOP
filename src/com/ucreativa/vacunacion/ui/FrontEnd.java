@@ -1,13 +1,11 @@
-package com.ucreativa.ui;
-import com.ucreativa.repositories.FileRepository;
-import com.ucreativa.services.BitacoraService;
+package com.ucreativa.vacunacion.ui;
+
+import com.ucreativa.vacunacion.repositories.FileRepository;
+import com.ucreativa.vacunacion.services.BitacoraService;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.io.IOException;
-
-import static java.lang.String.join;
 
 public class FrontEnd extends JFrame{
 

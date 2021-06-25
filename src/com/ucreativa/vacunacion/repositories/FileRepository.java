@@ -1,17 +1,14 @@
-package com.ucreativa.repositories;
+package com.ucreativa.vacunacion.repositories;
 
-import com.ucreativa.vacunacion.entities.BitacoraVacunas;
 import com.ucreativa.vacunacion.entities.Persona;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 public class FileRepository implements Repository{
 

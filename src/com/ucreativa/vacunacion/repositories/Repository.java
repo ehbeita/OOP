@@ -1,9 +1,9 @@
-package com.ucreativa.repositories;
+package com.ucreativa.vacunacion.repositories;
 
-import java.io.IOException;
+import com.ucreativa.vacunacion.entities.Persona;
+
 import java.util.Date;
 import java.util.List;
-import com.ucreativa.vacunacion.entities.Persona;
 
 public interface Repository {
     void save(Persona persona, String marca, Date fecha);
